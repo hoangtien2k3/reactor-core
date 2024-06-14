@@ -81,7 +81,7 @@ public class zip {
         Mono<Account> accountMono1 = Mono.just(new Account("123-456-789"));
         Mono<Address> addressMono1 = Mono.just(new Address("New York"));
 
-        List<Mono<?>> monos1 = Arrays.asList(userMono, accountMono, addressMono);
+        List<Mono<?>> monos1 = Arrays.asList(userMono1, accountMono1, addressMono1);
 
         // Hàm tổ hợp kết hợp các giá trị từ các Mono thành một UserProfile
         Function<Object[], UserProfile> combinator1 = array -> {
