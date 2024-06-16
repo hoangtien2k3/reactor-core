@@ -10,11 +10,9 @@ Mono:
 
 - [https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html](https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html)
 
-## Khan Niem:
-
 ## Reactor Core:
 
-## Publisher
+## ❄️Publisher
 
 - Publisher là một nguồn dữ liệu mà từ đó các phần tử dữ liệu (items) được phát ra. Nó định nghĩa một phương thức duy
   nhất:
@@ -25,7 +23,7 @@ public interface Publisher<T> {
 }
 ```
 
-## Subscriber:
+## ❄️Subscriber:
 
 - Subscriber là một người tiêu dùng dữ liệu, nó sẽ nhận các phần tử dữ liệu từ Publisher thông qua phương thức onNext().
 
@@ -49,7 +47,7 @@ Trong đó:
 - [onError(Throwable t)](): Được gọi khi xảy ra lỗi trong quá trình phát dữ liệu.
 - [onComplete()](): Được gọi khi Publisher đã phát ra tất cả các phần tử và hoàn thành.
 
-## Subscription:
+## ❄️Subscription:
 
 - Subscription đại diện cho mối quan hệ giữa Publisher và Subscriber. Nó cung cấp hai phương thức chính:
 
@@ -66,7 +64,7 @@ Trong đó:
 - [request(long n)](): Yêu cầu Publisher phát ra n phần tử tiếp theo cho Subscriber.
 - [cancel()](): Hủy đăng ký, không nhận thêm dữ liệu nữa.
 
-## Processor:
+## ❄️Processor:
 
 - Processor là một thành phần trung gian, vừa là Publisher vừa là Subscriber. Nó có thể được sử dụng để xử lý dữ liệu
   giữa nguồn dữ liệu ban đầu và người tiêu thụ.
