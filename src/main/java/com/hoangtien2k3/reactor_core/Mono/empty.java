@@ -5,13 +5,12 @@ import reactor.core.publisher.Mono;
 import java.util.Optional;
 
 /**
- * method:
- *      static <T> Mono<T>	empty()
+ * @method:
+ * <p>static <T> Mono<T> empty()
  *
- *      => Create a Mono that completes without emitting any item.
- *      => Tạo một Mono hoàn thành mà không phát ra bất kỳ mục nào.
- *
- * */
+ * <p>=> Create a Mono that completes without emitting any item.
+ * <p>=> Tạo một Mono hoàn thành mà không phát ra bất kỳ mục nào.
+ */
 public class empty {
     public static void main(String[] args) {
         Mono<Optional<String>> mono = getMonoValue(false);

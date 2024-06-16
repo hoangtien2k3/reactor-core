@@ -37,21 +37,19 @@ class UserProfile {
     private String city;
 }
 
-
 /**
- * method:
- *      static <R> Mono<R>	zip(Function<? super Object[],? extends R> combinator, Mono<?>... monos)
- *      => Aggregate given monos into a new Mono that will be fulfilled when all of the given Monos have produced an item, aggregating their values according to the provided combinator function.
- *      => Tổng hợp các monos đã cho thành một Mono mới sẽ được thực hiện khi tất cả các Mono đã cho đã tạo ra một mục, tổng hợp giá trị của chúng theo hàm tổ hợp đã cung cấp.
- *
- *
- *
- * */
+ * @method: static <R> Mono<R>	zip(Function<? super Object[],? extends R> combinator, Mono<?>... monos)
+ * <p>
+ * => Aggregate given monos into a new Mono that will be fulfilled when all of the given Monos have produced an item, aggregating their values according to the provided combinator function.
+ * <p>
+ * => Tổng hợp các monos đã cho thành một Mono mới sẽ được thực hiện khi tất cả các Mono đã cho đã tạo ra một mục, tổng hợp giá trị của chúng theo hàm tổ hợp đã cung cấp.
+ */
 public class zip {
     public static void main(String[] args) {
 
         /**
-         * method:
+         * @method:
+         *
          *      static <R> Mono<R> zip(Function<? super Object[], ? extends R> combinator, Mono<?>... monos)
          */
         Mono<User> userMono = Mono.just(new User("John Doe"));
@@ -69,12 +67,13 @@ public class zip {
         userProfileMono.subscribe(userProfile -> System.out.println("UserProfile: " + userProfile));
 
 
-
-
         /**
-         * method:
+         * @method:
+         *
          *      static <R> Mono<R>	zip(Iterable<? extends Mono<?>> monos, Function<? super Object[],? extends R> combinator)
+         *
          *      => Aggregate given monos into a new Mono that will be fulfilled when all of the given Monos have produced an item, aggregating their values according to the provided combinator function.
+         *
          *      => Tổng hợp các monos đã cho thành một Mono mới sẽ được thực hiện khi tất cả các Mono đã cho đã tạo ra một mục, tổng hợp giá trị của chúng theo hàm tổ hợp đã cung cấp.
          */
         Mono<User> userMono1 = Mono.just(new User("John Doe"));
@@ -96,11 +95,13 @@ public class zip {
         userProfileMono1.subscribe(userProfile -> System.out.println("UserProfile: " + userProfile));
 
 
-
         /**
-         * method:
+         * @method:
+         *
          *     static <T1,T2> Mono<Tuple2<T1,T2>>	zip(Mono<? extends T1> p1, Mono<? extends T2> p2)
+         *
          *     => Combine two monos into a new {@code Mono} that will be fulfilled when both of the given Monos have produced an item, aggregating their values into a {@link Tuple2}.
+         *
          *     => Kết hợp hai monos thành một Mono mới sẽ được thực hiện khi cả hai Mono đã cho đã tạo ra một mục, tổng hợp giá trị của chúng thành một Tuple2.
          * */
         Mono<String> mono11 = Mono.just("Hello");
@@ -117,11 +118,13 @@ public class zip {
         });
 
 
-
         /**
-         * method:
+         * @method:
+         *
          *      static <T1,T2,O> Mono<O> zip(Mono<? extends T1> p1, Mono<? extends T2> p2, BiFunction<? super T1,? super T2,? extends O> combinator)
+         *
          *      => Combine two monos into a new {@code Mono} that will be fulfilled when both of the given Monos have produced an item, applying the provided combinator to the pair of items.
+         *
          *      => Kết hợp hai monos thành một Mono mới sẽ được thực hiện khi cả hai Mono đã cho đã tạo ra một mục, áp dụng hàm tổ hợp đã cung cấp cho cặp mục.
          * */
         Mono<Integer> mono1 = Mono.just(10);
@@ -134,11 +137,13 @@ public class zip {
         resultMono.subscribe(result -> System.out.println("Result: " + result)); // Result: 50
 
 
-
         /**
-         * method:
+         * @method:
+         *
          *      static <T1,T2,T3> Mono<Tuple3<T1,T2,T3>> zip(Mono<? extends T1> p1, Mono<? extends T2> p2, Mono<? extends T3> p3)
+         *
          *      => Merge given monos into a new Mono that will be fulfilled when all of the given Monos have produced an item, aggregating their values into a Tuple3.
+         *
          *      => Kết hợp các monos đã cho thành một Mono mới sẽ được thực hiện khi tất cả các Mono đã cho đã tạo ra một mục, tổng hợp giá trị của chúng thành một Tuple3.
          * */
         Mono<String> mono1111 = Mono.just("Hello");
@@ -155,7 +160,6 @@ public class zip {
             Double dbl = tuple.getT3(); // Lấy giá trị từ Mono thứ ba
             System.out.println("String: " + str + ", Integer: " + num + ", Double: " + dbl);
         });
-
 
 
         // ...

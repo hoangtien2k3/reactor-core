@@ -5,11 +5,12 @@ import reactor.core.publisher.Mono;
 import java.util.function.Function;
 
 /**
- * method: <P> P as(Function<? super Mono<T>,P> transformer)
- *
+ * @method: <P> P as(Function<? super Mono<T>,P> transformer)
+ * <p>
  * => Transform this Mono into a target type.
+ * <p>
  * => chuyển đổi Mono này thành một kiểu mục tiêu.
- * */
+ */
 public class as {
     public static void main(String[] args) {
         Mono<String> mono = Mono.just("Hello, World!");

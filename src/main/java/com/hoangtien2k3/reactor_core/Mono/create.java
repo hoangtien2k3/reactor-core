@@ -3,18 +3,15 @@ package com.hoangtien2k3.reactor_core.Mono;
 import reactor.core.publisher.Mono;
 
 /**
- * method:
- *      public static <T> Mono<T> create(Consumer<MonoSink<T>> callback)
- *
- *      => Creates a deferred emitter that can be used with callback-based APIs to signal at most one value, a complete or an error signal.
- *      => Tạo một bộ phát hoãn mà có thể được sử dụng với các API dựa trên gọi lại để báo hiệu tối đa một giá trị, một tín hiệu hoàn chỉnh hoặc lỗi.
- *
- *
- * note:
- *      + Phương thức tạo Mono mà cho phép bạn tạo một Mono tùy chỉnh bằng cách cung cấp một Consumer của MonoSink.
- *      + Đây là một cách mạnh mẽ để tạo Mono trong trường hợp bạn cần kiểm soát hoàn toàn quá trình phát tán (emitting) giá trị, bao gồm xử lý lỗi và hoàn thành.
- *
- * */
+ * @method: public static <T> Mono<T> create(Consumer<MonoSink<T>> callback)
+ * <p>
+ * => Creates a deferred emitter that can be used with callback-based APIs to signal at most one value, a complete or an error signal.
+ * <p>
+ * => Tạo một bộ phát hoãn mà có thể được sử dụng với các API dựa trên gọi lại để báo hiệu tối đa một giá trị, một tín hiệu hoàn chỉnh hoặc lỗi.
+ * @note: + Phương thức tạo Mono mà cho phép bạn tạo một Mono tùy chỉnh bằng cách cung cấp một Consumer của MonoSink.
+ * <p>
+ * + Đây là một cách mạnh mẽ để tạo Mono trong trường hợp bạn cần kiểm soát hoàn toàn quá trình phát tán (emitting) giá trị, bao gồm xử lý lỗi và hoàn thành.
+ */
 public class create {
     public static void main(String[] args) {
         Mono<String> mono = Mono.create(sink -> {

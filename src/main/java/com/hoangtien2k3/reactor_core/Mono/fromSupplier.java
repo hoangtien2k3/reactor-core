@@ -6,18 +6,22 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 /**
- * method:
- *    static <T> Mono<T> fromSupplier(Supplier<? extends T> supplier)
- *
- *    => Create a Mono, producing its value using the provided Supplier.
- *    => Tạo một Mono, sản xuất giá trị của nó bằng cách sử dụng Supplier được cung cấp.
- *
- *
- * note:
- *    + để tạo một Mono từ một Supplier. Đây là một cách để lấy giá trị từ Supplier và bắt kết quả của nó vào một Mono.
- *
- *    + Chỉ đơn giản trả về một giá trị và không ném ra ngoại lệ.
- *    + Bạn không cần phải xử lý lỗi bởi vì Supplier không thực thi một công việc có thể gây lỗi.
+ * @method:
+ * <p>
+ * static <T> Mono<T> fromSupplier(Supplier<? extends T> supplier)
+ * <p>
+ * => Create a Mono, producing its value using the provided Supplier.
+ * <p>
+ * => Tạo một Mono, sản xuất giá trị của nó bằng cách sử dụng Supplier được cung cấp.
+ * <p>
+ * <p>
+ * @note:
+ * <p>
+ * + để tạo một Mono từ một Supplier. Đây là một cách để lấy giá trị từ Supplier và bắt kết quả của nó vào một Mono.
+ * <p>
+ * + Chỉ đơn giản trả về một giá trị và không ném ra ngoại lệ.
+ * <p>
+ * + Bạn không cần phải xử lý lỗi bởi vì Supplier không thực thi một công việc có thể gây lỗi.
  */
 public class fromSupplier {
     public static void main(String[] args) {

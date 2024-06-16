@@ -5,16 +5,17 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 
 /**
- * method: T block()
+ * @method: T block()
+ * <p>
  * => Subscribe to this Mono and block indefinitely until a next signal is received.
+ * <p>
  * => Đăng ký Mono này và chặn vô thời hạn cho đến khi nhận được tín hiệu tiếp theo.
- *
- * method: T block(Duration timeout)
+ * @method: T block(Duration timeout)
+ * <p>
  * => Subscribe to this Mono and block until a next signal is received or a timeout expires.
+ * <p>
  * => Đăng ký Mono này và chặn cho đến khi nhận được tín hiệu tiếp theo hoặc hết thời gian chờ.
- *
-
- * */
+ */
 public class block {
     public static void main(String[] args) {
         // Tạo một Mono chứa giá trị 10

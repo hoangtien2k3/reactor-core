@@ -5,28 +5,31 @@ import reactor.core.publisher.Mono;
 import java.util.concurrent.Callable;
 
 /**
- * method:
- *      static <T> Mono<T> fromCallable(Callable<? extends T> supplier)
- *
- *      => Create a Mono producing its value using the provided Callable.
- *      => Tạo một Mono sản xuất giá trị của nó bằng cách sử dụng Callable được cung cấp.
- *
- * note:
- *     + Sử dụng đê tạo một `Mono` từ một `Callable`. (hay chuyen doi tu mot Callable thanh mot Mono)
- *     + Thực hiện bất đồng bộ: fromCallable cho phép bạn thực hiện các thao tác có thể ném ra ngoại lệ và bắt kết quả từ một Callable mà không cần phải chờ đợi đồng bộ.
- *
- *     + Khả năng ném ra ngoại lệ: fromCallable tự động bắt và phát lại bất kỳ ngoại lệ nào xảy ra từ Callable làm kết quả của Mono.
- *     + Xử lý ngoại lệ: fromCallable tự động bắt và phát lại bất kỳ ngoại lệ nào xảy ra từ Callable làm kết quả của Mono.
- *
- *
- * Su dung:
- *     + Mono.fromCallable() được sử dụng khi bạn muốn thực hiện một nhiệm vụ có thể mất thời gian (như tính toán bất đồng bộ) và chuyển kết quả từ một Callable thành một Mono
- *     + Mono.fromCallable() chỉ bắn ra một onComplete() sau khi Callable hoàn thành thành công hoặc một onError() nếu Callable ném ra một ngoại lệ.
- *
- *     + Không trả về giá trị và không thể ném ra ngoại lệ một cách trực tiếp
- *     + Ban không cần phải xử lý lỗi cho Mono được tạo từ Runnable.
- *
- * */
+ * @method:
+ * <p>
+ * static <T> Mono<T> fromCallable(Callable<? extends T> supplier)
+ * <p>
+ * => Create a Mono producing its value using the provided Callable.
+ * <p>
+ * => Tạo một Mono sản xuất giá trị của nó bằng cách sử dụng Callable được cung cấp.
+ * <p>
+ * @note:
+ * <p>
+ * + Sử dụng đê tạo một `Mono` từ một `Callable`. (hay chuyen doi tu mot Callable thanh mot Mono)
+ * <p>
+ * + Thực hiện bất đồng bộ: fromCallable cho phép bạn thực hiện các thao tác có thể ném ra ngoại lệ và bắt kết quả từ một Callable mà không cần phải chờ đợi đồng bộ.
+ * <p>
+ * + Khả năng ném ra ngoại lệ: fromCallable tự động bắt và phát lại bất kỳ ngoại lệ nào xảy ra từ Callable làm kết quả của Mono.
+ * <p>
+ * + Xử lý ngoại lệ: fromCallable tự động bắt và phát lại bất kỳ ngoại lệ nào xảy ra từ Callable làm kết quả của Mono.
+ * <p>
+ * <p>
+ * @Su dung:
+ * <p>
+ * + Mono.fromCallable() được sử dụng khi bạn muốn thực hiện một nhiệm vụ có thể mất thời gian (như tính toán bất đồng bộ) và chuyển kết quả từ một Callable thành một Mono
+ * <p>
+ * + Mono.fromCallable() chỉ bắn ra một onComplete() sau khi Callable hoàn thành thành công hoặc một onError() nếu Callable ném ra một ngoại lệ.
+ */
 public class fromCallable {
     public static void main(String[] args) {
         // Tạo một Mono từ một Callable

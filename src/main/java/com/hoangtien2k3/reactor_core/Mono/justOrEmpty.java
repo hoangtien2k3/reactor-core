@@ -5,16 +5,23 @@ import reactor.core.publisher.Mono;
 import java.util.Optional;
 
 /**
- * method:  static <T> Mono<T> justOrEmpty(Optional<? extends T> data)
- *          static <T> Mono<T>	justOrEmpty(T data)
+ * @method:
  *
- *      => Create a new Mono that emits the specified item if it is not null, otherwise only emits onComplete.
- *      => Tạo một Mono mới phát ra mục được chỉ định nếu nó không phải là null, nếu không chỉ phát ra onComplete.
- *
- * Node:
- *      + Dùng để tạo ra một Mono chứa một giá trị hoặc một Mono.empty() nếu giá trị là null.
- *      + Không ném ra ngoại lệ khi giá trị là null.
- * */
+ * <p>
+ * static <T> Mono<T> justOrEmpty(Optional<? extends T> data)
+ * <p>
+ * static <T> Mono<T>	justOrEmpty(T data)
+ * <p>
+ * => Create a new Mono that emits the specified item if it is not null, otherwise only emits onComplete.
+ * <p>
+ * => Tạo một Mono mới phát ra mục được chỉ định nếu nó không phải là null, nếu không chỉ phát ra onComplete.
+ * <p>
+ * @Node:
+ * <p>
+ * + Dùng để tạo ra một Mono chứa một giá trị hoặc một Mono.empty() nếu giá trị là null.
+ * <p>
+ * + Không ném ra ngoại lệ khi giá trị là null.
+ */
 public class justOrEmpty {
     public static void main(String[] args) {
         // Tạo một giá trị null

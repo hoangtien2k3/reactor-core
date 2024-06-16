@@ -4,9 +4,9 @@ import reactor.core.publisher.Mono;
 
 /**
  * Join the termination signals from this mono and another source into the returned void mono.
- *
+ * <p>
  * `and` : là một cách để kết hợp nhiều Mono lại với nhau sao cho tất cả chúng phải hoàn thành thành công
- * */
+ */
 public class and {
     public static void main(String[] args) {
         // Tạo một Mono chứa giá trị 10

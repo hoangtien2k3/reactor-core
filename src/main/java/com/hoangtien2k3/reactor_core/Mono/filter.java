@@ -3,14 +3,16 @@ package com.hoangtien2k3.reactor_core.Mono;
 import reactor.core.publisher.Mono;
 
 /**
- * method: Mono<T>	filter(Predicate<? super T> tester)
- *      => If this Mono is valued, test the result and replay it if predicate returns true.
- *      => Nếu Mono này được đánh giá, hãy kiểm tra kết quả và phát lại nó nếu predicate trả về true.
- *
- * filter:
- *      - Sử dụng filter khi điều kiện lọc của bạn có thể được kiểm tra ngay lập tức mà không cần thực hiện các tác vụ không đồng bộ.
- *        Các điều kiện này thường đơn giản và không đòi hỏi thời gian xử lý lâu.
- * */
+ * @method:
+ * <p>Mono<T>	filter(Predicate<? super T> tester)
+ * <p>=> If this Mono is valued, test the result and replay it if predicate returns true.
+ * <p>=> Nếu Mono này được đánh giá, hãy kiểm tra kết quả và phát lại nó nếu predicate trả về true.
+ * <p>
+ * <p>
+ * @filter:
+ * <p>- Sử dụng filter khi điều kiện lọc của bạn có thể được kiểm tra ngay lập tức mà không cần thực hiện các tác vụ không đồng bộ.
+ * <p>Các điều kiện này thường đơn giản và không đòi hỏi thời gian xử lý lâu.
+ */
 public class filter {
     public static void main(String[] args) {
         // filter(Predicate<? super T> predicate)

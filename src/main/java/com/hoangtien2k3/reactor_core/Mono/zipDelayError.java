@@ -1,7 +1,6 @@
 package com.hoangtien2k3.reactor_core.Mono;
 
 import reactor.core.publisher.Mono;
-import reactor.util.function.Tuple2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,20 +8,23 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
-* method:
-*      static <T1,T2,R> Mono<R> zipDelayError(Publisher<? extends T1> source1,
-*                                            Publisher<? extends T2> source2,
-*                                           BiFunction<? super T1,? super T2,? extends R> combinator);
-*      => Combine two sources via a zipper function, delaying errors from any source until both sources have terminated.
-*      => Kết hợp hai nguồn thông qua một hàm zipper, trì hoãn lỗi từ bất kỳ nguồn nào cho đến khi cả hai nguồn đều đã kết thúc.
-*
- *
- *
- *      static <R> Mono<R> zipDelayError(Iterable<? extends Mono<?>> monos,
- *                                       Function<? super Object[], ? extends R> combinator)
- *      => Combine the values from this mono and another into a new combined mono using a combinator function.
- *      => Kết hợp các giá trị từ mono này và mono khác thành một mono kết hợp mới bằng cách sử dụng một hàm tổ hợp.
-* */
+ * @method: static <T1,T2,R> Mono<R> zipDelayError(Publisher<? extends T1> source1,
+ * Publisher<? extends T2> source2,
+ * BiFunction<? super T1,? super T2,? extends R> combinator);
+ * <p>
+ * => Combine two sources via a zipper function, delaying errors from any source until both sources have terminated.
+ * <p>
+ * => Kết hợp hai nguồn thông qua một hàm zipper, trì hoãn lỗi từ bất kỳ nguồn nào cho đến khi cả hai nguồn đều đã kết thúc.
+ * <p>
+ * <p>
+ * <p>
+ * static <R> Mono<R> zipDelayError(Iterable<? extends Mono<?>> monos,
+ * Function<? super Object[], ? extends R> combinator)
+ * <p>
+ * => Combine the values from this mono and another into a new combined mono using a combinator function.
+ * <p>
+ * => Kết hợp các giá trị từ mono này và mono khác thành một mono kết hợp mới bằng cách sử dụng một hàm tổ hợp.
+ */
 public class zipDelayError {
     public static void main(String[] args) {
         /**
@@ -45,9 +47,9 @@ public class zipDelayError {
 
         // Hàm tổ hợp để nối các giá trị thành một chuỗi
         Function<Object[], String> combinator = objects -> Arrays.stream(objects)
-                    .map(Object::toString)
-                    .collect(Collectors.joining(" "))
-                    .trim();
+                .map(Object::toString)
+                .collect(Collectors.joining(" "))
+                .trim();
 
         // Sử dụng zipDelayError để kết hợp các Mono và xử lý lỗi một cách linh hoạt
         Mono<String> zippedMono = Mono.zipDelayError(combinator, mono1, mono2);
@@ -57,9 +59,6 @@ public class zipDelayError {
                 result -> System.out.println("Result: " + result), // Result: Hello oops!
                 error -> System.err.println("Error: " + error.getMessage()) // Error: Oops!
         );
-
-
-
 
 
         /**

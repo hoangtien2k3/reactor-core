@@ -7,16 +7,18 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * method:
- *      static <T> Mono<T> from(Publisher<? extends T> source)
- *
- *      => Expose the specified Publisher with the Mono API, and ensure it will emit 0 or 1 item.
- *      => Hiển thị Nhà xuất bản được chỉ định với API Mono và đảm bảo nó sẽ phát ra 0 hoặc 1 mục.
- *
- * node:
- *      + Chuyển đổi từ một loại Publisher (có thể là Mono, Flux, hoặc các loại Publisher khác) thành một Mono.
- *
- * */
+ * @method:
+ * <p>
+ * static <T> Mono<T> from(Publisher<? extends T> source)
+ * <p>
+ * => Expose the specified Publisher with the Mono API, and ensure it will emit 0 or 1 item.
+ * <p>
+ * => Hiển thị Nhà xuất bản được chỉ định với API Mono và đảm bảo nó sẽ phát ra 0 hoặc 1 mục.
+ * <p>
+ * @node:
+ * <p>
+ * + Chuyển đổi từ một loại Publisher (có thể là Mono, Flux, hoặc các loại Publisher khác) thành một Mono.
+ */
 public class from {
     public static void main(String[] args) {
 
@@ -38,7 +40,6 @@ public class from {
         );
 
 
-
         /**
          * Giả sử chúng ta có một Mono và chúng ta muốn tạo một Mono mới từ Mono đó (thực tế là không cần thiết nhưng chỉ để minh họa).
          * */
@@ -54,7 +55,6 @@ public class from {
                 error -> System.err.println("Error: " + error),
                 () -> System.out.println("Completed")
         );
-
 
 
         /**

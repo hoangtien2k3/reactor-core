@@ -5,13 +5,12 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 
 /**
- * method:
- *      <R> Mono<R>	flatMap(Function<? super T,? extends Mono<? extends R>> transformer)
- *
- *      => Transform the item emitted by this Mono asynchronously, returning the value emitted by another Mono.
- *      => Chuyển đổi mục được phát ra bởi Mono này một cách không đồng bộ, trả về giá trị được phát ra bởi một Mono khác.
- *
- * */
+ * @method: <R> Mono<R>	flatMap(Function<? super T,? extends Mono<? extends R>> transformer)
+ * <p>
+ * => Transform the item emitted by this Mono asynchronously, returning the value emitted by another Mono.
+ * <p>
+ * => Chuyển đổi mục được phát ra bởi Mono này một cách không đồng bộ, trả về giá trị được phát ra bởi một Mono khác.
+ */
 public class flatMap {
     public static void main(String[] args) {
         // Tạo một Mono chứa userId

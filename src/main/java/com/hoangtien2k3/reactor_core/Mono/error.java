@@ -5,20 +5,22 @@ import reactor.core.publisher.Mono;
 import java.util.function.Supplier;
 
 /**
- * method:
- *      static <T> Mono<T> error(Throwable error)
+ * @method:
+ * static <T> Mono<T> error(Throwable error)
  *
- *      => Create a Mono that terminates with the specified error immediately after being subscribed to.
- *      => Tạo một Mono kết thúc với lỗi được chỉ định ngay sau khi được đăng ký.
- *
- *
- *      static <T> Mono<T> error(Supplier<? extends Throwable> errorSupplier)
- *
- *      => Create a Mono that terminates with an error immediately after being subscribed to.
- *      => Tạo một Mono kết thúc với lỗi ngay sau khi được đăng ký.
+ * <p>=> Create a Mono that terminates with the specified error immediately after being subscribed to.
+ * <p>=> Tạo một Mono kết thúc với lỗi được chỉ định ngay sau khi được đăng ký.
  *
  *
- * */
+ * <p>static <T> Mono<T> error(Supplier<? extends Throwable> errorSupplier)
+ *
+ * <p>=> Create a Mono that terminates with an error immediately after being subscribed to.
+ * <p>=> Tạo một Mono kết thúc với lỗi ngay sau khi được đăng ký.
+ * <p>
+ * <p>
+ * @note:
+ * + error là một phương thức trong Reactor để tạo ra một Mono hoặc Flux mà ngay lập tức phát ra một tín hiệu lỗi (error signal).
+ */
 public class error {
     public static void main(String[] args) {
 
@@ -28,7 +30,6 @@ public class error {
                         value -> System.out.println("Giá trị: " + value),
                         error -> System.err.println("Lỗi: " + error)
                 );
-
 
 
         // static <T> Mono<T> error(Supplier<? extends Throwable> errorSupplier)
